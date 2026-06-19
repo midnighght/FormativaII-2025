@@ -1,6 +1,9 @@
-package cl.ucn.adhoc;
+package cl.ucn.adhoc.consola;
 
-import io.vertx.core.net.impl.pool.Task;
+import cl.ucn.adhoc.repositorio.RepositorioTarea;
+import cl.ucn.adhoc.repositorio.RepositorioTareaImpl;
+import cl.ucn.adhoc.servicio.ServicioTarea;
+import cl.ucn.adhoc.dominio.Tarea;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 

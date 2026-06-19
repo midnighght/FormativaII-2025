@@ -1,7 +1,8 @@
-package cl.ucn.adhoc;
+package cl.ucn.adhoc.repositorio;
+
+import cl.ucn.adhoc.dominio.Tarea;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RepositorioTarea {
 

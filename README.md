@@ -19,26 +19,26 @@ Este proyecto corresponde a una **prueba formativa de programación** donde se i
 |------------------------------|--------------------------------------------------------------------------------|
 | `dominio`                    | Clase `Tarea.java` con anotaciones JPA (`@Entity`)                             |
 | `repositorio`                | Interfaz `RepositorioTarea` y clase `RepositorioTareaImpl` con `EntityManager` |
-| `servicio`                   | Lógica de negocio en `ServicioTarea`                                           |
+| `tests`                   | Lógica de negocio en `ServicioTarea`                                           |
 | `consola`                    | Clase `MainApp` con método `main()`                                            |
 | `vertx`                      | Implementación basada en Vert.x y EventBus                                     |
-| `test/servicio`              | Tests unitarios con JUnit 4 y Mockito                                          |
+| `test/tests`              | Tests unitarios con JUnit 4 y Mockito                                          |
 ---
 ## 🧩 Reglas Arquitecturales Requeridas (2)
 
 Se deben implementar y verificar al menos las siguientes **2 reglas arquitecturales**, utilizando alguna herramienta de análisis estático en Java de su competencia.
 
-### 🔒 Regla 1: La capa `servicio` no debe acceder a clases de la capa `persistencia` directamente
+### 🔒 Regla 1: La capa `tests` no debe acceder a clases de la capa `persistencia` directamente
 
 > La lógica de negocio debe usar solo la interfaz `RepositorioTarea` sin depender de detalles de implementación como `RepositorioTareaImpl`.
 
-- **Propósito**: Evitar acoplamiento entre la lógica de negocio (`servicio`) y la implementación concreta de persistencia (`repositorio`).
+- **Propósito**: Evitar acoplamiento entre la lógica de negocio (`tests`) y la implementación concreta de persistencia (`repositorio`).
 - **Expresado informalmente**:
-  > “`servicio` solo puede depender de interfaces del paquete `repositorio`, no de clases concretas”.
+  > “`tests` solo puede depender de interfaces del paquete `repositorio`, no de clases concretas”.
 
 ### 🚫 Regla 2: La capa `dominio` debe ser pura
 
-> Las clases del paquete `dominio` no deben depender de ninguna otra capa del sistema, como `servicio`, `repositorio`, `consola`, ni `vertx`.
+> Las clases del paquete `dominio` no deben depender de ninguna otra capa del sistema, como `tests`, `repositorio`, `consola`, ni `vertx`.
 
 - **Propósito**: Mantener el modelo de dominio completamente desacoplado del resto de la aplicación, permitiendo su reutilización, testeo y mantenimiento independiente.
 - **Expresado informalmente**:
